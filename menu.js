@@ -1,7 +1,20 @@
 const { isMac, isDev } = require('./constants');
+const {
+    createAboutWindow,
+} = require('./windowUtils');
 
 const menu = [
-    ...(isMac ? [{ role: 'appMenu' }] : [])
+    ...(isMac ? [
+        {
+            label: 'Shrink',
+            submenu: [
+                {
+                    label: 'About',
+                    click: createAboutWindow
+                }
+            ]
+        }
+    ] : [])
     ,
     {
         role: 'fileMenu'
