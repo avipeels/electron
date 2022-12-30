@@ -18,12 +18,15 @@ app.on('ready', () => {
     createMainWindow();
     const mainMenu = Menu.buildFromTemplate(menu);
     Menu.setApplicationMenu(mainMenu);
+
     globalShortcut.register('CmdOrCtrl+R', () => {
         mainWindow.reload();
     });
+
     globalShortcut.register(isMac ? 'Cmd+Alt+I' : 'Shift+I', () => {
         mainWindow.toggleDevTools();
     });
+    
     mainWindow.on('ready', () => mainWindow = null)
 });
 

@@ -1,18 +1,28 @@
-const isMac = require('./constants');
+const { isMac, isDev } = require('./constants');
 
 const menu = [
     ...(isMac ? [{ role: 'appMenu' }] : [])
     ,
     {
-        label: 'File',
+        role: 'fileMenu'
+    },
+    ...(isDev ? [{
+        label: 'Developer',
         submenu: [
             {
-                label: 'Quit',
-                accelerator: 'CmdOrCtrl+W',
-                click: () => app.quit()
+                role: 'reload'
+            },
+            {
+                role: 'forcereload'
+            },
+            {
+                type: 'separator'
+            },
+            {
+                role: 'toggleDevTools'
             }
         ]
-    }
+    }] : [])
 ];
 
 module.exports = menu;
