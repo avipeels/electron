@@ -1,0 +1,16 @@
+{
+  "name": "image-shrink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --exec electron ."
+  },
+  "author": "Avinash Peelukhana",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
